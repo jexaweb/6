@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Register() {
   return (
@@ -67,13 +68,13 @@ function Register() {
         </button>
 
         <div className="flex gap-2 mt-5 text-white">
-          <p>Already have an account?</p>
-          <a
+          <span>Already have an account?</span>
+          <Link
             href="/login"
             className="text-zinc-800  underline hover:text-gray-200"
           >
             Login
-          </a>
+          </Link>
         </div>
       </form>
     </div>
