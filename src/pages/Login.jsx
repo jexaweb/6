@@ -19,6 +19,7 @@ function Login() {
                 type="email"
                 className=" w-100 border border-gray-300 px-5 py-2 pr-10 rounded-3xl focus:outline-none focus:ring-2 focus:ring-purple-500 "
                 placeholder="Enter your email"
+                required
               />
               <img src="" alt="" />
             </div>
@@ -32,12 +33,13 @@ function Login() {
                 type="password"
                 className=" w-100  border border-gray-300 px-5 py-2 pr-10 rounded-3xl focus:outline-none focus:ring-2 focus:ring-purple-500"
                 placeholder="Enter your password"
+                required
               />
             </div>
           </div>
           <button
             type="submit"
-            className=" bg-blue-950 text-white pt-2 pr-50 pb-2 pl-50 rounded hover:bg-blue-950 transition"
+            className="bg-blue-950 text-white py-2 px-30 rounded hover:bg-blue-900 transition"
           >
             Login
           </button>

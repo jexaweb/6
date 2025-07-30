@@ -68,7 +68,7 @@ function Register() {
         </button>
 
         <div className="flex gap-2 mt-5 text-white">
-          <span>Already have an account?</span>
+          <span>Don't have an account?</span>
           <Link
             href="/login"
             className="text-zinc-800  underline hover:text-gray-200"
