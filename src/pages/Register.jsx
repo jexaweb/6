@@ -70,7 +70,7 @@ function Register() {
         <div className="flex gap-2 mt-5 text-white">
           <span>Don't have an account?</span>
           <Link
-            href="/login"
+            to="/login"
             className="text-zinc-800  underline hover:text-gray-200"
           >
             Login
