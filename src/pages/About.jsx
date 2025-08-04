@@ -1,5 +1,9 @@
 function About() {
-  return <div className="text-5xl">About</div>;
+  return (
+    <div>
+      <h1>About Page</h1>
+    </div>
+  );
 }
 
 export default About;

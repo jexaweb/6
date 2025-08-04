@@ -1,8 +1,5 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import Productlist from "../components/Productlist";
-import { data } from "react-router-dom";
-// import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "../hooks/useFetch";
 
 function Home() {
   const {
@@ -10,12 +7,14 @@ function Home() {
     isPending,
     error,
   } = useFetch("https://dummyjson.com/products");
-  useEffect(() => {
-    axios("")
-      .then(({ data }) => setProducts(data.products))
-      .catch((error) => console.log(error.message));
-  }, []);
-  return <section>{products && <Productlist products={products} />}</section>;
+
+  return (
+    <section className="p-4">
+      {isPending && <p>Loading...</p>}
+      {error && <p className="text-red-500">{error}</p>}
+      {products && <Productlist products={products.products} />}
+    </section>
+  );
 }
 
 export default Home;

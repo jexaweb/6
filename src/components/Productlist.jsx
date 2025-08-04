@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 // import Product from "../components/Product";
 import Footer from "../components/Footer";
+import { useGlobalContext } from "../hooks/useGlobalContext";
 
 function ProductList({ products }) {
+  const { dispatch } = useGlobalContext();
+  const handleAddToCart = (prod) => {
+    dispatch({ type: "ADD_PRODUCT", payload: prod });
+  };
   return (
     <div className="w-full">
       <div className="grid grid-cols-3 gap-4  lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2">
@@ -25,7 +30,14 @@ function ProductList({ products }) {
               <p className="text-2xl text-red-400 mt-1">
                 <span className="text-neutral-400">Price: </span> ${prod.price}
               </p>
-              <button className="btn btn-soft mt-1">
+              <button
+                className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition mt-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  handleAddToCart(prod);
+                }}
+              >
                 <i className="fa-solid fa-cart-shopping text-2xl"></i>
               </button>
             </div>

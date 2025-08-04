@@ -9,12 +9,12 @@ import SingleProduct from "./pages/SingleProduct";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import MainLayout from "./layouts/MainLayout";
-// import { Routes, Route } from "react-router-dom";
 import { ProtectedRoutes } from "./components/ProtectedRoutes";
 import { Navigate } from "react-router-dom";
+import { useGlobalContext } from "./hooks/useGlobalContext";
 
 function App() {
-  let user = false;
+  const { user } = useGlobalContext();
   const router = createBrowserRouter([
     {
       path: "/",
