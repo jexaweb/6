@@ -7,7 +7,7 @@ const initialState = () => {
   return localStorage.getItem("products")
     ? JSON.parse(localStorage.getItem("products"))
     : {
-        user: true,
+        user: false,
         products: [],
         totalAmount: 0,
         totalPrice: 0,
@@ -73,6 +73,10 @@ export function GlobalContextProvider({ children }) {
 
     localStorage.setItem("products", JSON.stringify(state));
   }, [state.products]);
+
+  useEffect(() => {
+    localStorage.setItem("globalState", JSON.stringify(state));
+  }, [state]);
 
   return (
     <GlobalContext.Provider value={{ ...state, dispatch }}>
