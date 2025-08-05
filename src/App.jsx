@@ -1,11 +1,16 @@
 import { useState } from "react";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
-import Shop from "./pages/Shop";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import SingleProduct from "./pages/SingleProduct";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+
+import {
+  Home,
+  About,
+  Contact,
+  Shop,
+  SingleProduct,
+  Login,
+  Register,
+} from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import MainLayout from "./layouts/MainLayout";
@@ -56,7 +61,12 @@ function App() {
       element: user ? <Navigate to="/" /> : <Register />,
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </>
+  );
 }
 
 export default App;
